@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aisocietycornell.tech/workshop/">
 <meta property="og:site_name" content="Cornell Tech AI Society">
-<meta property="og:title" content="You're invited: build your portfolio with AI · Thu, Oct 29, 5–7 PM">
+<meta property="og:title" content="You're invited: build your portfolio with AI · Thu, Oct 29, 4–6 PM">
 <meta property="og:description" content="AI Society's first workshop. Bring a resume, leave with a live portfolio site. Zero code, free, seats limited.">
 <meta property="og:image" content="https://aisocietycornell.tech/assets/CTAIS%20logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -171,7 +171,7 @@ footer{display:flex;justify-content:space-between;padding-top:30px;font-size:12p
       <div class="done" id="done" aria-live="polite">
         <p class="hand" id="doneT">see you there!</p>
         <p class="body" id="doneM" style="margin-bottom:14px"></p>
-        <div class="btns"><button class="b" type="button" id="ics">Add to calendar</button><button class="b" type="button" id="share">Invite a friend</button></div>
+        <div class="btns"><button class="b" type="button" id="share">Invite a friend</button></div>
       </div>
     </div>
   </section>
@@ -238,10 +238,10 @@ footer{display:flex;justify-content:space-between;padding-top:30px;font-size:12p
 /* ========= EDIT ME ========= */
 const CONFIG = {
   eventName: "AI Society first meeting: build your portfolio with AI",
-  start: "2026-10-29T17:00:00-04:00",   // start, with timezone offset
-  end:   "2026-10-29T19:00:00-04:00",
+  start: "2026-10-29T16:00:00-04:00",   // start, with timezone offset
+  end:   "2026-10-29T18:00:00-04:00",
   dateLabel: "Thursday, Oct 29",
-  timeLabel: "5–7 PM ET",
+  timeLabel: "4–6 PM ET",
   month: "OCT", day: "29", year: "2026",
   location: "Room TBA",
   host: "Pranav Dhingra.",
@@ -277,12 +277,12 @@ document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
 /* the afternoon: timeline drives the mini browser */
 const STEPS = [
-  ["5:00","AI Society intro","Who we are, what we're building this year, and how to get involved.",0],
-  ["5:15","Why build, why now","Ideas are cheap to test now. Why a working site beats a resume bullet.",0],
-  ["5:25","Prompt like a pro","Specific, with context and structure. Build the hero first, then the rest.",2],
-  ["5:40","Build lab","Most of the evening. We'll walk you through the tools step by step: paste your resume into the template and iterate.",3],
-  ["6:35","Ship it","Deploy to Vercel or GitHub Pages, add a domain and analytics.",4],
-  ["6:50","Demo showcase","Show your site in 60 seconds. Everyone leaves with a link.",5]
+  ["4:00","AI Society intro","Who we are, what we're building this year, and how to get involved.",0],
+  ["4:15","Why build, why now","Ideas are cheap to test now. Why a working site beats a resume bullet.",0],
+  ["4:25","Prompt like a pro","Specific, with context and structure. Build the hero first, then the rest.",2],
+  ["4:40","Build lab","Most of the evening. We'll walk you through the tools step by step: paste your resume into the template and iterate.",3],
+  ["5:35","Ship it","Deploy to Vercel or GitHub Pages, add a domain and analytics.",4],
+  ["5:50","Demo showcase","Show your site in 60 seconds. Everyone leaves with a link.",5]
 ];
 const tags = ["first meeting!","","","","","new!"];
 $("#steps").innerHTML = STEPS.map((s,i) => `<li tabindex="0" data-i="${i}"><span class="t">${s[0]}</span><div><h3>${s[1]}${tags[i] ? `<span class="new">${tags[i]}</span>` : ""}</h3><div class="more"><div><p>${s[2]}</p></div></div></div></li>`).join("");
@@ -400,7 +400,7 @@ function done(name, viaEmail, status){
     $("#doneM").textContent = "That email is already signed up, so your seat is saved. See you Thursday.";
   } else {
     $("#doneT").textContent = `see you there, ${first}!`;
-    $("#doneM").textContent = viaEmail ? "Your email app just opened with your details. Hit send to lock in your seat." : "You're on the list. Add it to your calendar so it doesn't sneak up on you.";
+    $("#doneM").textContent = viaEmail ? "Your email app just opened with your details. Hit send to lock in your seat." : "You're on the list. See you Thursday, Oct 29 at 4 PM.";
   }
 }
 const priorRaw = store.get("plab-signed");
@@ -423,12 +423,6 @@ async function loadSpots(){
   } catch(_) {}
 }
 loadSpots();
-$("#ics").onclick = () => {
-  const f = d => new Date(d).toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"");
-  const t = s => s.replace(/([,;\\])/g,"\\$1");
-  const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Portfolio Lab//EN","BEGIN:VEVENT","UID:"+Date.now()+"@portfoliolab","DTSTAMP:"+f(Date.now()),"DTSTART:"+f(CONFIG.start),"DTEND:"+f(CONFIG.end),"SUMMARY:"+t(CONFIG.eventName),"LOCATION:"+t(CONFIG.location),"DESCRIPTION:"+t("Bring a laptop, charger and resume. "+location.href.split("#")[0]),"END:VEVENT","END:VCALENDAR"].join("\r\n");
-  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics],{type:"text/calendar"})); a.download = "portfolio-lab.ics"; document.body.appendChild(a); a.click(); a.remove();
-};
 $("#share").onclick = async () => {
   const url = location.href.split("#")[0], b = $("#share");
   if (navigator.share) { try { await navigator.share({title: CONFIG.eventName, url}); } catch(_){} return; }
