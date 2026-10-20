@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aisocietycornell.tech/workshop/">
 <meta property="og:site_name" content="Cornell Tech AI Society">
-<meta property="og:title" content="You're invited: build your portfolio with AI · Fri, Oct 16, 5–7 PM">
+<meta property="og:title" content="You're invited: build your portfolio with AI · Thu, Oct 29, 5–7 PM">
 <meta property="og:description" content="AI Society's first workshop. Bring a resume, leave with a live portfolio site. Zero code, free, seats limited.">
 <meta property="og:image" content="https://aisocietycornell.tech/assets/CTAIS%20logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,11 +238,11 @@ footer{display:flex;justify-content:space-between;padding-top:30px;font-size:12p
 /* ========= EDIT ME ========= */
 const CONFIG = {
   eventName: "AI Society first meeting: build your portfolio with AI",
-  start: "2026-10-16T17:00:00-04:00",   // start, with timezone offset
-  end:   "2026-10-16T19:00:00-04:00",
-  dateLabel: "Friday, Oct 16",
+  start: "2026-10-29T17:00:00-04:00",   // start, with timezone offset
+  end:   "2026-10-29T19:00:00-04:00",
+  dateLabel: "Thursday, Oct 29",
   timeLabel: "5–7 PM ET",
-  month: "OCT", day: "16", year: "2026",
+  month: "OCT", day: "29", year: "2026",
   location: "Room TBA",
   host: "Pranav Dhingra.",
   hostBio: "Engineer turned PM (formerly Senior PM at Grubhub) and Cornell Tech alum.",
@@ -397,7 +397,7 @@ function done(name, viaEmail, status){
     $("#doneM").textContent = "All 40 seats are taken. We'll email you if one opens up.";
   } else if (status === "already") {
     $("#doneT").textContent = `you're already in, ${first}!`;
-    $("#doneM").textContent = "That email is already signed up, so your seat is saved. See you Friday.";
+    $("#doneM").textContent = "That email is already signed up, so your seat is saved. See you Thursday.";
   } else {
     $("#doneT").textContent = `see you there, ${first}!`;
     $("#doneM").textContent = viaEmail ? "Your email app just opened with your details. Hit send to lock in your seat." : "You're on the list. Add it to your calendar so it doesn't sneak up on you.";
