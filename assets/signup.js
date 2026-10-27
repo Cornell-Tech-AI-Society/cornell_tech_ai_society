@@ -25,7 +25,7 @@
       msg.textContent = "All seats are taken. We'll email you if one opens up.";
     } else if (status === "already") {
       title.textContent = `You're already in, ${first}!`;
-      msg.textContent = "That email is already signed up. See you Friday.";
+      msg.textContent = "That email is already signed up. See you Thursday.";
     } else {
       title.textContent = `See you there, ${first}!`;
       msg.textContent = "Your seat is saved. Bring a laptop, charger, and resume.";

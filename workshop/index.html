@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>AI Society · you're invited</title>
-<meta name="description" content="A free evening workshop: walk in with a resume, leave with a live portfolio site. No coding required.">
+<meta name="description" content="AI Society's fall kickoff: the first workshop of the semester. Walk in with your resume, walk out with your own live portfolio website. 2 hours, no coding needed. Thu, Oct 29, 4–6 PM.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aisocietycornell.tech/workshop/">
 <meta property="og:site_name" content="Cornell Tech AI Society">
-<meta property="og:title" content="You're invited: build your portfolio with AI · Thu, Oct 29, 4–6 PM">
-<meta property="og:description" content="AI Society's first workshop. Bring a resume, leave with a live portfolio site. Zero code, free, seats limited.">
+<meta property="og:title" content="AI Society fall kickoff: resume in, live portfolio out · Thu, Oct 29, 4–6 PM">
+<meta property="og:description" content="Walk in with your resume, walk out with your own live portfolio website. 2 hours, no coding needed. Bring your laptop + resume. Free, only 40 seats.">
 <meta property="og:image" content="https://aisocietycornell.tech/assets/CTAIS%20logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,7 +144,7 @@ footer{display:flex;justify-content:space-between;padding-top:30px;font-size:12p
 
 <main class="page">
   <header>
-    <h1>you're invited to <span class="typed" id="typed" aria-live="off">AI Society's first workshop</span></h1>
+    <h1>you're invited to <span class="typed" id="typed" aria-live="off">AI Society's fall kickoff</span></h1>
     <div class="stamp" aria-label="Workshop date"><b data-cfg="month"></b><span data-cfg="day"></span></div>
   </header>
 
@@ -178,7 +178,7 @@ footer{display:flex;justify-content:space-between;padding-top:30px;font-size:12p
 
   <section class="row reveal">
     <div class="lbl"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg>the gist</div>
-    <p class="body">The <span style="color:var(--ink)">AI Society</span>'s first meeting. One evening, <span class="num">zero</span> lines of code. Walk in with your resume, leave with a <span class="num">live</span> portfolio site and a link to share. We'll use AI tools like <a href="https://v0.app" target="_blank" rel="noopener">v0</a> to build it, polish it, and put it online, together.</p>
+    <p class="body">The <span style="color:var(--ink)">AI Society</span>'s fall kickoff and the first workshop of the semester. One evening, <span class="num">zero</span> lines of code. Walk in with your resume, leave with a <span class="num">live</span> portfolio site and a link to share. We'll use AI tools like <a href="https://v0.app" target="_blank" rel="noopener">v0</a> to build it, polish it, and put it online, together.</p>
   </section>
 
   <section class="aft reveal">
@@ -237,7 +237,7 @@ footer{display:flex;justify-content:space-between;padding-top:30px;font-size:12p
 <script>
 /* ========= EDIT ME ========= */
 const CONFIG = {
-  eventName: "AI Society first meeting: build your portfolio with AI",
+  eventName: "AI Society fall kickoff: build your portfolio with AI",
   start: "2026-10-29T16:00:00-04:00",   // start, with timezone offset
   end:   "2026-10-29T18:00:00-04:00",
   dateLabel: "Thursday, Oct 29",
@@ -258,7 +258,7 @@ const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}},
 document.querySelectorAll("[data-cfg]").forEach(el => el.textContent = CONFIG[el.dataset.cfg] || "");
 
 /* typewriter */
-const phrases = ["AI Society's first workshop","portfolio making with AI"];
+const phrases = ["AI Society's fall kickoff","portfolio making with AI"];
 (async () => {
   const el = $("#typed"); if (reduce) return;
   const wait = ms => new Promise(r => setTimeout(r, ms));
@@ -284,7 +284,7 @@ const STEPS = [
   ["5:35","Ship it","Deploy to Vercel or GitHub Pages, add a domain and analytics.",4],
   ["5:50","Demo showcase","Show your site in 60 seconds. Everyone leaves with a link.",5]
 ];
-const tags = ["first meeting!","","","","","new!"];
+const tags = ["fall kickoff!","","","","","new!"];
 $("#steps").innerHTML = STEPS.map((s,i) => `<li tabindex="0" data-i="${i}"><span class="t">${s[0]}</span><div><h3>${s[1]}${tags[i] ? `<span class="new">${tags[i]}</span>` : ""}</h3><div class="more"><div><p>${s[2]}</p></div></div></div></li>`).join("");
 const mini = $("#mini");
 function stage(i){
