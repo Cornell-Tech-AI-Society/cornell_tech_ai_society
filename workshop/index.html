@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://aisocietycornell.tech/workshop/">
 <meta property="og:site_name" content="Cornell Tech AI Society">
 <meta property="og:title" content="AI Society fall kickoff: resume in, live portfolio out · Thu, Oct 29, 4–6 PM">
-<meta property="og:description" content="Walk in with your resume, walk out with your own live portfolio website. 2 hours, no coding needed. Bring your laptop + resume. Free, only 40 seats.">
+<meta property="og:description" content="Walk in with your resume, walk out with your own live portfolio website. 2 hours, no coding needed. Bring your laptop + resume. Free, only 45 seats.">
 <meta property="og:image" content="https://aisocietycornell.tech/assets/CTAIS%20logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -248,7 +248,7 @@ const CONFIG = {
   hostBio: "",
   formEndpoint: "https://script.google.com/macros/s/AKfycbwgVaMSU_jfMBqq3xEXk-_I3YCyJxg-8AjkTvdZKVzxnUJCUgoi7SrKBYOj0Gcbkbc/exec",   // Google Sheet sign-ups
   contactEmail: "you@example.com",      // used when formEndpoint is empty
-  limit: 40                             // seats; must match LIMIT in the Google Apps Script
+  limit: 45                             // seats; must match LIMIT in the Google Apps Script
 };
 /* =========================== */
 
@@ -394,7 +394,7 @@ function done(name, viaEmail, status){
   $("#done").classList.add("show");
   if (status === "waitlist") {
     $("#doneT").textContent = `you're on the waitlist, ${first}`;
-    $("#doneM").textContent = "All 40 seats are taken. We'll email you if one opens up.";
+    $("#doneM").textContent = "All 45 seats are taken. We'll email you if one opens up.";
   } else if (status === "already") {
     $("#doneT").textContent = `you're already in, ${first}!`;
     $("#doneM").textContent = "That email is already signed up, so your seat is saved. See you Thursday.";
